@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import Status from './components/Status';
+import LightSwitch from './components/LightSwitch';
+import LightBulb from './components/LightBulb';
+import { LightProvider } from './context/LightProvider'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <>
+      <LightProvider>
+        {/* Let op: het LightBulb component is eigenlijk onnodig. Meer bedoeld als inspiratie :) */}
+        <LightBulb />
+        <Status />
+        <LightSwitch />
+      </LightProvider>
+
+      <p>Lightbulb css copied from
+        <a href="https://codepen.io/joanaborges/details/JeKjwW">
+          Joana Pereira.
         </a>
-      </header>
-    </div>
+      </p>
+    </>
   );
 }
 
